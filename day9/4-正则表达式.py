@@ -203,7 +203,8 @@ def other_func():
 def find_second_match(pattern, text):
     matches = re.finditer(pattern, text)
     try:
-        next(matches)  # 跳过第一个匹配项
+        # next(matches)  # 激活迭代器第一个选项
+        print(next(matches).group())
         second_match = next(matches)  # 获取第二个匹配项
         return second_match.group()
     except StopIteration:
@@ -294,14 +295,14 @@ def use_split():
     ret = re.split(r":| ","info:xiaoZhang 33 shandong")
     print(ret)
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
     # simple()
     # single()
     # more_alp()
     # start_end()
     # split_group()
-    other_func()
-    # use_finditer()
+    # other_func()
+    use_finditer()
     # use_generator()
     # use_findall()
     # use_sub()
